@@ -39,7 +39,7 @@ public class ZooERP {
 
         // Создаем сотрудников
         Veterinarian drSmith = new Veterinarian("Доктор Смит", "VET-001");
-        Zookeeper john = new Zookeeper("Джон Доу", "ZK-001");
+        Zookeeper john = new Zookeeper("Джон Cноу", "ZK-001");
 
         // Создаем расписания кормления
         FeedingSchedule lionFeeding = new FeedingSchedule(simba, "Сырое мясо", 5, 2);

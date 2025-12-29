@@ -4,7 +4,6 @@ import animals.Animal;
 import employees.Veterinarian;
 import java.time.LocalDate;
 
-// Принцип SRP: отвечает только за медосмотры
 public class MedicalExamination {
     private Animal animal;
     private Veterinarian veterinarian;
@@ -17,13 +16,13 @@ public class MedicalExamination {
         this.veterinarian = veterinarian;
         this.date = LocalDate.now();
         this.notes = notes;
-        this.results = "Ожидается";
+        this.results = "В процессе";
     }
 
     public void completeExamination(String results) {
         this.results = results;
         animal.setHealthStatus(results);
-        System.out.println("Медицинский осмотр завершён для " + animal.getName());
+        System.out.println("Медицинский осмотр завершен для " + animal.getName());
     }
 
     public String getExaminationReport() {
@@ -31,12 +30,12 @@ public class MedicalExamination {
                 "Дата: " + date + "\n" +
                 "Животное: " + animal.getName() + " (" + animal.getSpecies() + ")\n" +
                 "Ветеринар: " + veterinarian.getName() + "\n" +
-                "Примечания: " + notes + "\n" +
+                "Заметки: " + notes + "\n" +
                 "Результаты: " + results + "\n" +
-                "Состояние здоровья: " + animal.getHealthStatus();
+                "Статус здоровья: " + animal.getHealthStatus();
     }
 
     public Animal getAnimal() {
-        return null;
+        return animal;
     }
 }

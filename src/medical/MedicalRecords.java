@@ -4,7 +4,6 @@ import animals.Animal;
 import java.util.ArrayList;
 import java.util.List;
 
-// Принцип SRP: управление медицинскими записями
 public class MedicalRecords {
     private List<MedicalExamination> examinations;
 
@@ -18,18 +17,18 @@ public class MedicalRecords {
 
     public List<MedicalExamination> getExaminationsForAnimal(Animal animal) {
         List<MedicalExamination> result = new ArrayList<>();
-        for (MedicalExamination exam : examinations) {
-            if (exam.getAnimal().equals(animal)) {
-                result.add(exam);
+        for (MedicalExamination examination : examinations) {
+            if (examination.getAnimal() != null && examination.getAnimal().equals(animal)) {
+                result.add(examination);
             }
         }
         return result;
     }
 
     public void displayAllExaminations() {
-        System.out.println("\n=== Медицинские осмотры ===");
-        for (MedicalExamination exam : examinations) {
-            System.out.println(exam.getExaminationReport());
+        System.out.println("\n=== МЕДИЦИНСКИЕ ОСМОТРЫ ===");
+        for (MedicalExamination examination : examinations) {
+            System.out.println(examination.getExaminationReport());
             System.out.println("---");
         }
     }

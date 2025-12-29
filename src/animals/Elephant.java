@@ -6,13 +6,13 @@ public class Elephant extends Mammal {
     public Elephant(String name, int age, double weight, double tuskLength) {
         super(name, "Слоняра", age, weight, false);
         this.tuskLength = tuskLength;
-        setDietType("Травоядная");
+        setDietType("травоядной");
     }
 
     public double getTuskLength() { return tuskLength; }
 
     @Override
     public String getSound() {
-        return "Трубление";
+        return "трубление";
     }
 }
