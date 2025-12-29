@@ -16,4 +16,7 @@ public abstract class Bird extends AbstractAnimal {
     public boolean canFly() { return canFly; }
 
     public abstract String getFlightPattern();
+
+    @Override
+    public abstract String getDietType();
 }

@@ -6,7 +6,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-// Принцип SRP: управление выставками
 public class Exhibition {
     private String name;
     private String theme;
@@ -40,8 +39,8 @@ public class Exhibition {
         StringBuilder info = new StringBuilder();
         info.append("=== ВЫСТАВКА: ").append(name).append(" ===\n");
         info.append("Тема: ").append(theme).append("\n");
-        info.append("Дата: ").append(dateTime).append("\n");
-        info.append("Макс. посетителей: ").append(maxVisitors).append("\n");
+        info.append("Дата и время: ").append(dateTime).append("\n");
+        info.append("Максимум посетителей: ").append(maxVisitors).append("\n");
         info.append("Животных участвует: ").append(participatingAnimals.size()).append("\n");
 
         info.append("Животные:\n");
@@ -55,5 +54,29 @@ public class Exhibition {
         }
 
         return info.toString();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getTheme() {
+        return theme;
+    }
+
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public int getMaxVisitors() {
+        return maxVisitors;
+    }
+
+    public List<Animal> getParticipatingAnimals() {
+        return new ArrayList<>(participatingAnimals);
+    }
+
+    public List<Employee> getAssignedStaff() {
+        return new ArrayList<>(assignedStaff);
     }
 }

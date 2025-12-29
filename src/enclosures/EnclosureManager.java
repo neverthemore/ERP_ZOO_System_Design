@@ -1,9 +1,10 @@
 package enclosures;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-// Принцип SRP: управление всеми вольерами
 public class EnclosureManager {
     private Map<String, Enclosure> enclosures;
 
@@ -23,11 +24,19 @@ public class EnclosureManager {
         enclosures.remove(id);
     }
 
+    public List<Enclosure> getAllEnclosures() {
+        return new ArrayList<>(enclosures.values());
+    }
+
     public void displayAllEnclosures() {
-        System.out.println("\n=== Все вольеры ===");
-        for (Enclosure enclosure : enclosures.values()) {
-            enclosure.displayEnclosureInfo();
-            System.out.println();
+        System.out.println("\n=== ВСЕ ВОЛЬЕРЫ ===");
+        if (enclosures.isEmpty()) {
+            System.out.println("Вольеров пока нет.");
+        } else {
+            for (Enclosure enclosure : enclosures.values()) {
+                enclosure.displayEnclosureInfo();
+                System.out.println();
+            }
         }
     }
 }
